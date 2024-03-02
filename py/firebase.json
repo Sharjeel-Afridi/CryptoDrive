@@ -1,0 +1,47 @@
+{
+  "type": "service_account",
+  "project_id": "efficiency-calculator-c2190",
+  "private_key_id": "547ad8cbebdc2af23895e5aed34116d86ab03cef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCD48YGeBcLUfbu\nse+9sfJrQLFH222bv7mICDT0/ZdeR5ye5tuT7AIg7oFyPPf8pPME+zNM2PhLqRfU\nbWdGEaZK0E5JZZDj+EsW5IbhMr0m2FzLt7AQpbRxNx5T2k0mtnNsq6G+GZMrDN4+\nTabRl10uAv2pJNc8l9F8E/BuHYSpdbDwuVfDaYUj+tVReQeeyODPsvyzJ2OPwt9X\nslMzsxuk41UCfFlHeMQruwKNJfoGDChGgxAeD+xD2u92xFpYO/ytQbEIbpYQf3Jx\nn4Ndc3jG9IU/pTP/Yz/5vdgLEX2ng9P1mLmQiM6TgGQO1seO7zF21gkow5NnmU9v\na9zGxPxRAgMBAAECggEAJmcLkXWlLBglIPJxnpfyQLV5CTXEsA1+zbOqC83NJdgP\nLBuHQwZ8xi78RRGomYlD86bbFJy2i31EYYergvT/qRgHO4rVyfNRlexbs7XM6sMk\nHfMx0l8Vb8O/UmYlgcitSi6dbVdQCUB5c8WzdaKvsIaRao8+FrgT+J9rqfxxVM/z\ngAsgbKqA+eCAi00nAMNCXkiydoyfGkz5T+t/mk9T/sBhWo1GvxebYmwZgQ92v+fz\n/4Bu0mV9cEkrWnYRjBUqlxffIP9OPVzGowkdmOOEeiaqyFrKOEmV2v13RD3TRSkg\naNk+xOIE97zHPgib7obDXMYy05T7Ez4XQxy9NWjJIwKBgQC4RfcQuqRVRIHmscHy\nUkpocccWUUGj+jk2WDcsOHpcoxcElOqxZrz9bai5opG4E7/tUlxZ0GE+BRBfdV6f\ndxVXEgY7F9XWAdMS4CPj0bk+xnz4bp+s++ZJKftAtocSxpSxjQD0YYamzxBXLXnc\nCqI6at28VFBhJVcgSbpHW061QwKBgQC3OgOOshE5SRQ3gYBAD8dqMxk6NJentKkX\nS1x9sc5/njeORHE04DZXDUh2y4JpMfAYKVFIGssd6xj+da078M3NBi48n8hyE+6V\nzzXr63jLaoi/4c2mr7mL2Wvv+gTR2w8+SUJP9u2T/HbFj0haxp+58F+hkkfsOHaJ\nr24POtuk2wKBgFNHO1sSHoZyiYpqt03+JqaBFQpe+p1SzlxjDbwsYhBPnG1zp4U4\n+xxFXMVYVSattkVYvWfRpsDSpQ2fC35h4QESokI+iWNIO84CAfZJp8BZD81uoTca\nOH7EPEqIsw6nNDfxk4beNG5akfX0FWh+Xcas2Tztlc3xhCiRaWAqQa3lAoGANfVb\nvtYpxFkFHyOABV2gOGI796wtTTIi6b1Dy7BlQ6fwbHEzdYLh/djnkjR0f045iqQA\nT9+0GWd2wNke3xwXP12mmCvl99Ju3KddFdEOjbkd9IQm8AOn/MtWwiE68iI05v7k\nDHCHnqEmyR9dC36a40MqpoZRr/sgzYNgQhPvQykCgYEAoM9KDmrjFnHcW1nfzETm\nnP34uGftQ45sSs5gY17AXazvKHrXFA9PlbPdLIbFad9dX7NbAC0V19oZqlMfv0zb\nnkyL9u8UNsGwPlBm+BLkuGJx7mc0bGJgkSDaKcrblmQXUu8Bg4ld+7hX1F5obJFE\ntKTvVn8x/Mi8NBary3exBEQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-w9irb@efficiency-calculator-c2190.iam.gserviceaccount.com",
+  "client_id": "108256194093235555272",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-w9irb%40efficiency-calculator-c2190.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com",
+  "hosting": {
+    "public": "templates",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default"
+    },
+    {
+      "source": "efficalc-firebase",
+      "codebase": "efficalc-firebase",
+      "ignore": [
+        "venv",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    },
+    {
+      "source": "firebase",
+      "codebase": "firebase",
+      "ignore": [
+        "venv",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ]
+}
