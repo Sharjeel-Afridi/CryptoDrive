@@ -31,10 +31,3 @@ def upload_file():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-# inputFilePath = 'windmill.jpg'
-# outputFilePath = 'encrypted.enc'
-# password = 'windmillimage'
-# key = generate_key(password)
-
-# encrypt_file(inputFilePath, outputFilePath, key)
