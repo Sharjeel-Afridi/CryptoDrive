@@ -6,9 +6,18 @@ const mydriveComponent = `<h1 class="font-bold text-2xl mt-[80px] ml-[50px]">My 
 const recentComponent = `<h1 class="font-bold text-2xl mt-[80px] ml-[50px]">Recent</h1>`;
 
 const components = {
-    "HOME": `<h1 class="font-bold text-2xl mt-[80px] ml-[50px]">HOME</h1>`,
-    "My Drive": `<h1 class="font-bold text-2xl mt-[80px] ml-[50px]">My Drive</h1>`,
-    "Recent": `<h1 class="font-bold text-2xl mt-[80px] ml-[50px]">Recent</h1>`
+    "HOME": `
+        <h1 class="font-bold text-2xl mt-[80px] ml-[50px]">
+            HOME
+        </h1>`,
+    "My Drive": `
+        <h1 class="font-bold text-2xl mt-[80px] ml-[50px]">
+            My Drive
+        </h1>`,
+    "Recent": `
+        <h1 class="font-bold text-2xl mt-[80px] ml-[50px]">
+            Recent
+        </h1>`
 };
 
 function renderComponent(component){
@@ -19,7 +28,7 @@ navBtns.forEach(navBtn => {
     navBtn.addEventListener('click', (event) => {
         let buttonText = event.target.textContent.trim();
         let buttonComponent = components[buttonText];
-        
+
         if (buttonComponent) {
             renderComponent(buttonComponent);
         }
@@ -31,3 +40,4 @@ navBtns.forEach(navBtn => {
     });
 });
 
+navBtns[0].click();
