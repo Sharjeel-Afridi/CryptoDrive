@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+# from Crypto.Cipher import AES
+# from Crypto.Util.Padding import pad, unpad
 import base64
 import os
 
@@ -43,7 +43,7 @@ class Encryptor():
             original = file.read()
 
         encrypted = f.encrypt(original)
-
+        return encrypted
         with open (encrypted_file, 'wb') as file:
             file.write(encrypted)
 
