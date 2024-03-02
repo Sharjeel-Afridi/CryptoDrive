@@ -2,7 +2,7 @@ const MyDrive = () => {
     return (
         <>
         <h1 className="font-bold text-2xl mt-[80px] ml-[50px]">
-            My Drive
+            MY DRIVE
         </h1>
         </>
     )
