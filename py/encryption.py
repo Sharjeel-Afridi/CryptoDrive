@@ -26,9 +26,9 @@ def generate_key(password):
 
 
 
-input_file_path = 'windmill.jpg'
-output_file_path = 'encrypted_file.enc'
-password = 'windmillimage'
-key = generate_key(password)
+# input_file_path = 'windmill.jpg'
+# output_file_path = 'encrypted_file.enc'
+# password = 'windmillimage'
+# key = generate_key(password)
 
-encrypt_file(input_file_path, output_file_path, key)
+# encrypt_file(input_file_path, output_file_path, key)
