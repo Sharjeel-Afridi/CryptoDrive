@@ -1,7 +1,4 @@
 from cryptography.fernet import Fernet
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
-import base64
 import os
 
 class Encryptor():
@@ -10,12 +7,15 @@ class Encryptor():
         key = Fernet.generate_key()
         return key
 
-    def encrypt_keyVal(keyValue, password):
-        key = base64.b64encode(password.encode())[:32]  # Use first 32 bytes of base64-encoded password as key
-        iv = os.urandom(16)  # Generate random initialization vector
-        cipher = AES.new(key, AES.MODE_CBC, iv=iv)
-        ciphertext = cipher.encrypt(pad(keyValue.encode(), AES.block_size))
-        return base64.b64encode(iv + ciphertext).decode() 
+    # def encrypt_keyVal(keyValue, password):
+    #     key_bytes = password.encode('utf-8')
+    #     message_bytes = keyValue.encode('utf-8')
+    #     iv = get_random_bytes(AES.block_size)
+    #     cipher = AES.new(key_bytes, AES.MODE_CBC, iv)
+    #     padded_message = pad(message_bytes, AES.block_size)
+    #     ciphertext_bytes = cipher.encrypt(padded_message)
+    #     ciphertext = b64encode(iv + ciphertext_bytes).decode('utf-8')
+    #     return ciphertext
 
     def key_write(self, key, key_name):
         with open(key_name, 'wb') as mykey:
@@ -26,14 +26,16 @@ class Encryptor():
             key = mykey.read()
         return key
 
-    def decrypt_keyVal(ciphertext, password):
-        key = base64.b64encode(password.encode())[:32]  # Use first 32 bytes of base64-encoded password as key
-        ciphertext = base64.b64decode(ciphertext.encode())  # Decode base64-encoded ciphertext
-        iv = ciphertext[:16]  # Extract IV
-        ciphertext = ciphertext[16:]  # Extract ciphertext
-        cipher = AES.new(key, AES.MODE_CBC, iv=iv)
-        decrypted_text = unpad(cipher.decrypt(ciphertext), AES.block_size)
-        return decrypted_text.decode()
+    # def decrypt_keyVal(ciphertext, password):
+    #     key_bytes = password.encode('utf-8')
+    #     ciphertext_bytes = b64decode(ciphertext)
+    #     iv = ciphertext_bytes[:AES.block_size]
+    #     cipher = AES.new(key_bytes, AES.MODE_CBC, iv)
+    #     ciphertext_bytes = ciphertext_bytes[AES.block_size:]
+    #     decrypted_bytes = cipher.decrypt(ciphertext_bytes)
+    #     plaintext_bytes = unpad(decrypted_bytes, AES.block_size)
+    #     plaintext = plaintext_bytes.decode('utf-8')
+    #     return plaintext
 
     def file_encrypt(self, key, original_file, encrypted_file):
         
@@ -65,14 +67,14 @@ if __name__ == '__main__':
 
     keyVal = encryptor.key_create()
 
-    encryptedKey = encryptor.encrypt_keyVal(keyVal, 'testkey')
+    # encryptedKey = encryptor.encrypt_keyVal(keyVal, 'testkey')
     
-    encryptor.key_write(encryptedKey, 'mykey.key')
+    encryptor.key_write(keyVal, 'mykey.key')
 
     loaded_key = encryptor.key_load('mykey.key')
 
-    decryptedKey = encryptor.decrypt_keyVal(loaded_key, 'testkey')
+    # decryptedKey = encryptor.decrypt_keyVal(loaded_key, 'testkey')
 
-    encryptor.file_encrypt(decryptedKey, '/Users/avyuktsoni/Downloads/windmill.jpg', 'enc_image.txt')
+    encryptor.file_encrypt(loaded_key, '/Users/avyuktsoni/Downloads/windmill.jpg', 'enc_image.txt')
 
-    encryptor.file_decrypt(decryptedKey, 'enc_image.txt', 'dec_image.jpg')
+    encryptor.file_decrypt(loaded_key, 'enc_image.txt', 'dec_image.jpg')
