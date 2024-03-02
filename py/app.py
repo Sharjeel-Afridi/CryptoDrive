@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from test import Encryptor
+from encryptor import Encryptor
 import os
 import requests
 
@@ -12,27 +12,22 @@ def upload_file():
 
     file = request.files['image']
 
-    upload_dir = '../static/'
+    upload_dir = '../static'
 
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
 
-    # Save the uploaded file to the upload directory
     file_path = os.path.join(upload_dir, file.filename)
     file.save(file_path)
-    # Do something with the file, such as saving it to a folder or processing it
-    key = load_key('../mykey.key')
-    # decryptedKey = encryptor.decrypt_keyVal(key, 'testkey')
     encryptor = Encryptor()
+    keyVal = encryptor.key_create()
+    encryptor.key_write(keyVal, '../mykey.key')
+    loaded_key = encryptor.key_load('../mykey.key')
 
-    encrypted_image = encryptor.file_encrypt(key,file_path, "enc_image.txt")
-
+    encryptor.file_encrypt(loaded_key, file_path, './enc_image.txt')
+    encryptor.file_decrypt(loaded_key, './enc_image.txt', 'dec_image.jpg')
     return jsonify({'message': 'File uploaded successfully'})
 
-def load_key(key_file):
-    with open(key_file, 'rb') as mykey:
-        key = mykey.read()
-    return key
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,6 +3,8 @@ import Plus from "./assets/icons8-plus-100.png"
 import Home from "./components/Home";
 import MyDrive from "./components/MyDrive";
 import Recent from "./components/Recent";
+import Input from './components/Input';
+
 
 const componentMap = {
     "HOME": <Home />,
@@ -12,13 +14,18 @@ const componentMap = {
 
 const App = () => {
     const [buttonText, setButtonText] = useState('HOME');
+    const [inputClick, setInputClick] = useState(false);
 
     const handleNavClick = (event) => {
         setButtonText(event.target.textContent.trim());
         
     }
+    const handleUpload = () => {
+        setInputClick(!inputClick)
+    }
 
     return (
+        <>
       <div className="flex">
         <nav className="flex flex-col gap-[20px] w-[25%] h-[100vh] border-r">
             <h1 className="flex justify-center items-center h-[20vh] font-bold text-3xl">CryptoDrive</h1>
@@ -36,10 +43,18 @@ const App = () => {
         </nav>
         <div className="relative h-[100vh] w-[75%] " id="content">
             {componentMap[buttonText]}
-            <img src={Plus} id="upload" className="absolute h-20 bottom-20 right-20 rounded-full cursor-pointer" />
+            {/* {inputClick && <Input />} */}
+            <img 
+                src={Plus} 
+                id="upload" 
+                className="absolute h-20 bottom-20 right-20 rounded-full cursor-pointer" 
+                onClick={handleUpload}
+            />
         </div>
-            
+        
       </div>
+      {inputClick && <Input />}
+      </>
     );
 };
 

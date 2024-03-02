@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.vite
+enc_image.txt
+dec_image.jpg
+mykey.key
