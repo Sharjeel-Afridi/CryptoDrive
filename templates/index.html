@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <script defer src="../static/script.js"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <title>Crypto Drive</title>
+  </head>
+  <body class="bg-[#0f162b] text-white">
+    <div class="flex">
+      <nav class="flex flex-col gap-[20px] w-[25%] h-[100vh] border-r">
+        <h1
+          class="flex justify-center items-center h-[20vh] font-bold text-3xl"
+        >
+          CryptoDrive
+        </h1>
+        <div class="flex flex-col justify-center h-[70vh] font-bold gap-[40px]">
+          <button class="nav-btn mx-6 p-2">HOME</button>
+          <button class="nav-btn mx-6 p-2">My Drive</button>
+          <button class="nav-btn mx-6 p-2">Recent</button>
+        </div>
+      </nav>
+      <div class="">
+        <img
+          src="./icons8-plus-100.png"
+          class="absolute h-20 bottom-20 right-20 rounded-full cursor-pointer"
+        />
+      </div>
+    </div>
+  </body>
+</html>
