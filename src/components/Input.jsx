@@ -49,7 +49,7 @@ const InputField = ({ setFormSubmitted }) => {
           id="myFile"
           name="uploaded-file"
           className="rounded-md font-semibold cursor-pointer"
-          accept=".jpg"
+          accept="*"
         />
         <input
           type="submit"
