@@ -22,28 +22,33 @@ const Home = () => {
     }
   };
 
-  const fileClick = (item) => {
-    setFilename(item);
-    setShowPassword(true);
-  };
-
-  return (
-    <>
-      <h1 className="font-bold text-2xl mt-[80px] ml-[50px]">HOME</h1>
-      <div className="flex gap-[50px]">
-        {data.name.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col w-[100px] cursor-pointer"
-            onClick={() => fileClick(item)}
-          >
-            <img src={FileImg} className="w-[100px]" />
-            <h2 className="overflow-hidden">{item}</h2>
-          </div>
-        ))}
-      </div>
-      {showPassword && <Password filename={filename} />}
-    </>
-  );
+      const fileClick = (item) => {
+        setFilename(item)
+        setShowPassword(true)        
+      }
+      const handleRefresh = () => {
+        console.log('refresh')
+        fetchData()
+      }
+    
+    return (
+        <>
+        <div className="flex justify-between items-center h-[100px] px-10">
+            <h1 className="font-bold text-2xl">
+                HOME
+            </h1>
+            <button onClick={handleRefresh}>Refresh</button>
+        </div>
+        <div className="flex gap-[50px] flex-wrap ml-[20px]">
+            {data.name.map((item,index) => (
+                <div key={index} className="flex flex-col w-[100px] cursor-pointer" onClick={() => fileClick(item)}>
+                    <img src={FileImg} className="w-[100px]" />
+                    <h2 className="w-[100px] overflow-hidden">{item}</h2>
+                </div>
+            ))}
+        </div>
+        {showPassword && <Password filename={filename}/>}
+        </>
+    )
 };
 export default Home;
