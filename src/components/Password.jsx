@@ -20,16 +20,14 @@ const Password = ({filename}) => {
                 body: data
             });
 
-            if (!response.ok) {
-                throw new Error('Try Again');
-            }
-            console.log('Checked successfully');
-
-        } catch (error) {
-            console.error('Error:', error);
-        }
-
-    };
+      if (!response.ok) {
+        throw new Error("Try Again");
+      }
+      console.log("Checked successfully");
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
 
     return(
