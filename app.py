@@ -1,6 +1,6 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, jsonify, request
 from flask_cors import CORS
-from encryptor import Encryptor
+from pyenc.encryptor import Encryptor
 from firebase_storage import upload_file_to_storage, download_file_from_storage
 from firebase_init import blobs
 import os, os.path, requests
@@ -26,7 +26,7 @@ def upload_file():
 
     file = request.files['image']
 
-    upload_dir = './static'
+    upload_dir = './static/uploaded'
 
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
@@ -37,8 +37,8 @@ def upload_file():
     encryptor.key_write(keyVal, './mykey.txt')
     loaded_key = encryptor.key_load('./mykey.txt')
 
-    encryptor.file_encrypt(loaded_key, file_path, f'{file.filename}.enc')
-    upload_file_to_storage(f'./{file.filename}.enc', f'{file.filename}.enc')
+    encryptor.file_encrypt(loaded_key, file_path, f'./static/encryptedLocal/{file.filename}.enc')
+    upload_file_to_storage(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
         
     return jsonify({'Result': 'File Uploaded Successfully'})
 
@@ -56,16 +56,15 @@ def send_data():
     data = request.json
 
     filename = data.get('filename')
-    print(filename)
     fileName = filename.split('.')[0]+'.'+filename.split('.')[1]
-    download_file_from_storage(f'{filename}', f'enc_{fileName}')
+    download_file_from_storage(f'{filename}', f'./static/encryptedCloud/enc_{fileName}')
     
     key_chk = data.get('input')
     print(key_chk)
     if len(key_chk) == 44:
         try:
-            encryptor.file_decrypt(key_chk, f'enc_{fileName}', f'dec_{fileName}')
-            if os.path.exists(f'dec_{fileName}') == True:
+            encryptor.file_decrypt(key_chk, f'./static/encryptedCloud/enc_{fileName}', f'./static/decrypted/dec_{fileName}')
+            if os.path.exists(f'./static/decrypted/dec_{fileName}') == True:
                 print('Correct Key!')
         except:
             print('Incorrect Key!')
