@@ -1,14 +1,23 @@
+import { useState } from "react";
 
 
-const Password = () => {
+const Password = ({filename}) => {
+    const[inputValue, setInputValue] = useState('');
+
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
+        const data = {
+            "filename": filename,
+            "input": inputValue
+        }
         try {
-            const response = await fetch('http://localhost:5000/checkpass', {
+            const response = await fetch('http://localhost:8080/send', {
                 method: 'POST',
-                body: event.target.value
+                body: data
             });
 
             if (!response.ok) {
@@ -29,7 +38,8 @@ const Password = () => {
                 <input 
                     className=" font-bold bg-white text-black rounded-md" 
                     placeholder="Enter your Secret Key"
-                    />
+                    value={inputValue}
+                    onChange={handleInputChange}/>
                 <button type="submit">Submit</button>
             </form>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Plus from "./assets/icons8-plus-100.png"
 import Home from "./components/Home";
 import MyDrive from "./components/MyDrive";
@@ -6,18 +6,20 @@ import Recent from "./components/Recent";
 import Input from './components/Input';
 import Apikey from './components/Apikey';
 
-const componentMap = {
-    "HOME": <Home />,
-    "My Drive": <MyDrive />,
-    "Recent": <Recent />
-  };
+
 
 const App = () => {
     const [buttonText, setButtonText] = useState('HOME');
     const [inputClick, setInputClick] = useState(false);
     const[formSubmitted, setFormSubmitted] = useState(false)
-    const[keyCopied, setKeyCopied]= useState(false);
+    const[keyCopied, setKeyCopied] = useState(false);
 
+    const componentMap = {
+        "HOME": <Home />,
+        "My Drive": <MyDrive />,
+        "Recent": <Recent />
+      };
+    
     const handleNavClick = (event) => {
         setButtonText(event.target.textContent.trim());
         

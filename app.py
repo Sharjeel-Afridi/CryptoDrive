@@ -35,12 +35,18 @@ def upload_file():
     encryptor.file_encrypt(loaded_key, file_path, f'{fileName}.txt')
     upload_file_to_storage(f'./{fileName}.txt', f'{fileName}.txt')
 
-    for blob in blobs:
-        name_list.append(blob.name)
+    return "File Uploaded"
+    # for blob in blobs:
+    #     name_list.append(blob.name)
 
     # encryptor.file_decrypt(loaded_key, f'{trimmedFileName}.txt', f'{file.filename}_dec.jpg')
 
     
+
+@app.route('/refresh', methods=['GET'])
+def refresh():
+    for blob in blobs:
+        name_list.append(blob.name)
 
 
 @app.route('/api/data', methods=['GET', 'POST'])
@@ -62,4 +68,4 @@ def send_data():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
