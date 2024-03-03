@@ -56,7 +56,7 @@ def send_data():
     data = request.json
 
     filename = data.get('filename')
-    fileName = filename.split('.')[0]+'.'+filename.split('.')[1]
+    fileName = filename.split('.')[0]+'.'+filename.split('.')[-2]
     download_file_from_storage(f'{filename}', f'./static/encryptedCloud/enc_{fileName}')
     
     key_chk = data.get('input')
