@@ -17,7 +17,7 @@ CryptoDrive is an innovative secure file-sharing platform that prioritizes the c
 In today's interconnected world, the exchange of sensitive information is commonplace across various industries and sectors. However, traditional file-sharing methods often lack adequate security measures, leaving sensitive data vulnerable to interception, theft, or unauthorized access. This poses a significant challenge for individuals and organizations seeking to protect their confidential information and maintain privacy.
 
 ## Why CryptoDrive?
-Against this backdrop, the necessity of CryptoDrive becomes evident as a solution to address the shortcomings of traditional file-sharing methods. CryptoDrive offers a secure and reliable platform for individuals and organizations to exchange sensitive information without compromising confidentiality. CryptoDrive mitigates the risk of data breaches by encrypting files during transmission and storage and ensuring that only authorized users can access the encrypted data.
+Against this backdrop, the necessity of CryptoDrive becomes evident as a solution to address the shortcomings of traditional file-sharing methods. CryptoDrive utilizes Base64 encryption, offering a secure and reliable platform for individuals and organizations to exchange sensitive information without compromising confidentiality. CryptoDrive mitigates the risk of data breaches by encrypting files during transmission and storage and ensuring that only authorized users can access the encrypted data.
 
 ## Use Cases
 ### Legal Compliance and Client Confidentiality:
