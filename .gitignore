@@ -27,8 +27,3 @@ dist-ssr
 enc_image.txt
 dec_image.jpg
 mykey.key
-
-static/decrypted
-static/encryptedCloud
-static/encryptedLocal
-static/uploaded
