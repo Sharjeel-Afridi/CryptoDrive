@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import MyDrive from "./components/MyDrive";
 import Recent from "./components/Recent";
 import Input from './components/Input';
-
+import Apikey from './components/Apikey';
 
 const componentMap = {
     "HOME": <Home />,
@@ -15,6 +15,7 @@ const componentMap = {
 const App = () => {
     const [buttonText, setButtonText] = useState('HOME');
     const [inputClick, setInputClick] = useState(false);
+    const[formSubmitted, setFormSubmitted] = useState(false)
 
     const handleNavClick = (event) => {
         setButtonText(event.target.textContent.trim());
@@ -53,7 +54,8 @@ const App = () => {
         </div>
         
       </div>
-      {inputClick && <Input />}
+      {(inputClick && !formSubmitted) && <Input setFormSubmitted={setFormSubmitted}/>}
+      {formSubmitted && <Apikey />}
       </>
     );
 };

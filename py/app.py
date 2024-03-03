@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from encryptor import Encryptor
+# from firebase_storage import upload_file_to_storage, download_file_from_storage
 import os
 import requests
 
@@ -24,8 +25,10 @@ def upload_file():
     encryptor.key_write(keyVal, '../mykey.key')
     loaded_key = encryptor.key_load('../mykey.key')
 
-    encryptor.file_encrypt(loaded_key, file_path, './enc_image.txt')
-    encryptor.file_decrypt(loaded_key, './enc_image.txt', 'dec_image.jpg')
+    encryptor.file_encrypt(loaded_key, file_path, f'./{file.filename}.txt')
+    # upload_file_to_storage(f'./{file.filename}.txt', f'cryptodrive/encrypted/{file.filename}.txt')
+
+    encryptor.file_decrypt(loaded_key, f'./{file.filename}.txt', f'{file.filename}_dec.jpg')
     return jsonify({'message': 'File uploaded successfully'})
 
 

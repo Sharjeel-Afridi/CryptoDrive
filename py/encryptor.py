@@ -47,9 +47,9 @@ if __name__ == '__main__':
 
     keyVal = encryptor.key_create()
     
-    encryptor.key_write(keyVal, 'mykey.key')
+    encryptor.key_write(keyVal, 'mykey.txt')
 
-    loaded_key = encryptor.key_load('mykey.key')
+    loaded_key = encryptor.key_load('mykey.txt')
 
     encryptor.file_encrypt(loaded_key, '/Users/avyuktsoni/Downloads/windmill.jpg', 'enc_image.txt')
 
