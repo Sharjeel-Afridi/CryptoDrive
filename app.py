@@ -33,8 +33,10 @@ def upload_file():
     encryptor.key_write(keyVal, './mykey.txt')
     loaded_key = encryptor.key_load('./mykey.txt')
 
-    encryptor.file_encrypt(loaded_key, file_path, f'{file.filename}.txt')
-    upload_file_to_storage(f'./{file.filename}.txt', f'{file.filename}.txt')
+    encryptor.file_encrypt(loaded_key, file_path, f'{file.filename}.enc')
+    upload_file_to_storage(f'./{file.filename}.enc', f'{file.filename}.enc')
+        
+    return jsonify({'Result': 'File Uploaded Successfully'})
 
 # @app.route('/refresh', methods=['GET'])
 # def refresh():
