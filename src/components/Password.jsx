@@ -6,9 +6,11 @@ const Password = ({filename}) => {
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
+        
     };
 
     const handleFormSubmit = async (event) => {
+        console.log(inputValue)
         event.preventDefault();
         const data = {
             "filename": filename,
@@ -17,7 +19,10 @@ const Password = ({filename}) => {
         try {
             const response = await fetch('http://localhost:8080/send', {
                 method: 'POST',
-                body: data
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
             });
 
       if (!response.ok) {
