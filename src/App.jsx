@@ -16,6 +16,7 @@ const App = () => {
     const [buttonText, setButtonText] = useState('HOME');
     const [inputClick, setInputClick] = useState(false);
     const[formSubmitted, setFormSubmitted] = useState(false)
+    const[keyCopied, setKeyCopied]= useState(false);
 
     const handleNavClick = (event) => {
         setButtonText(event.target.textContent.trim());
@@ -55,7 +56,7 @@ const App = () => {
         
       </div>
       {(inputClick && !formSubmitted) && <Input setFormSubmitted={setFormSubmitted}/>}
-      {formSubmitted && <Apikey />}
+      {(formSubmitted && !keyCopied) && <Apikey setKeyCopied={setKeyCopied} />}
       </>
     );
 };

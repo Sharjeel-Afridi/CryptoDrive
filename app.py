@@ -35,6 +35,9 @@ def upload_file():
     encryptor.file_encrypt(loaded_key, file_path, f'{fileName}.txt')
     upload_file_to_storage(f'./{fileName}.txt', f'{fileName}.txt')
 
+    for blob in blobs:
+        name_list.append(blob.name)
+
     # encryptor.file_decrypt(loaded_key, f'{trimmedFileName}.txt', f'{file.filename}_dec.jpg')
 
     
@@ -47,7 +50,16 @@ def get_data():
     data.update({"name": name_list})
     print(data)
     return data
-    # download_file_from_storage(f'cryptodrive/encrypted/{}.txt', )
+
+@app.route('/send', methods=['POST'])
+def send_data():
+    
+    filename = request.data.decode('utf-8')  # Assuming the filename is sent as a string
+    # print('Received filename:', filename)
+    # download_file_from_storage(f'{}.txt', )
+
+    # return 'Filename received successfully', 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)

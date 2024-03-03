@@ -1,8 +1,8 @@
-// import Key from "../../py/mykey.txt";
 import { useEffect, useState } from "react";
 
-const Apikey = () => {
-    const [keyContent, setKeyContent] = useState('')
+const Apikey = ({setKeyCopied}) => {
+    const [keyContent, setKeyContent] = useState('');
+
     useEffect(()=>{
         const fetchKeyContent = async () => {
             try {
@@ -17,11 +17,20 @@ const Apikey = () => {
         fetchKeyContent();
         }, []);
         
-    
+    const copyToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(keyContent);
+            setKeyCopied(true);
+        } catch (error) {
+            console.error('Failed to copy:', error);
+        }
+        };
+        
     return (
-        <div className="absolute top-0 h-[100%] w-[100%] z-10 flex justify-center items-center">
-            <div className="flex justify-center items-center p-4 h-[15vh] bg-slate-400 rounded-md ">
+        <div className="absolute top-0 h-[100%] w-[100%] z-10 flex justify-center items-center backdrop-blur-[5px]">
+            <div className="flex justify-center items-center gap-[10px] p-4 h-[15vh] bg-slate-400 rounded-md ">
             <h1 className=" font-bold bg-white text-black rounded-md">{keyContent}</h1>
+            <img src="../../static/icons8-copy-64.png" className="w-[25px] cursor-pointer" onClick={copyToClipboard}/>
             </div>
         </div>
     )
