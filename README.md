@@ -27,7 +27,7 @@ Against this backdrop, the necessity of CryptoDrive becomes evident as a solutio
 - Healthcare organizations can rely on CryptoDrive to protect patient confidentiality and comply with regulations such as HIPAA. With CryptoDrive, healthcare providers can securely share medical records and sensitive healthcare information while safeguarding patient privacy.
 
 ### Government and Military Communication:
-- Government agencies and military organizations can utilize CryptoDrive (base64 encryption) to exchange classified information securely. CryptoDrive will ensures that sensitive government documents and intelligence reports remain confidential and protected from adversaries.
+- Government agencies and military organizations can utilize CryptoDrive (base64 encryption) to exchange classified information securely. CryptoDrive will ensure that sensitive government documents and intelligence reports remain confidential and protected from adversaries.
 
 ### Intellectual Property Protection:
 - Innovators and creators in industries such as technology and entertainment can leverage CryptoDrive to protect intellectual property rights. CryptoDrive offers a secure environment for sharing patent applications, design blueprints, and copyrighted materials while safeguarding valuable intellectual assets.
@@ -37,15 +37,22 @@ Against this backdrop, the necessity of CryptoDrive becomes evident as a solutio
 - **End-to-end Encryption**: CryptoDrive utilizes Base64 encryption to secure user data, ensuring that only authorized users with the decryption key can access the information.
 - **Firebase Integration**: CryptoDrive leverages Firebase's storage buckets to safely store the encrypted files uploaded by the user.
 - **File Upload and Download**: The application allows users to upload encrypted files to their Firebase storage buckets, and download them for decryption and access.
-- **Intuitive User Interface**: CryptoDrive features a user-friendly interface that makes it easy for users to encrypt, store and access their sensitive data.
+- **Intuitive User Interface**: CryptoDrive features a user-friendly interface that makes it easy for users to encrypt, store, and access their sensitive data.
 
-## Usage
+## Technologies Used
 CryptoDrive is built using the following technologies:
 - **Frontend**: ReactJS, Tailwind CSS
 - **Backend**: Python
 - **Libraries Used**: Flask, flask-cors, cryptography.fernet, firebase-admin, os, etc.
 - **Encryption**: Base64 (cryptography.fernet)
 - **Storage**: Firebase Storage Bucket
+
+## Usage
+1. Install dependencies with `npm i`
+2. Build the bundled js with `npm run build`
+3. Run app.py using `python3 app.py`
+4. Upload your files and documents to encrypt and securely store them on your Firebase Storage.
+5. Download encrypted files as needed and decrypt them using your encryption key.
 
 ## Team 
 - [Participants/Team Members](https://github.com/Sharjeel-Afridi/CryptoDrive/blob/main/PARTICIPANTS.md)
