@@ -49,10 +49,11 @@ CryptoDrive is built using the following technologies:
 
 ## Usage
 1. Install dependencies with `npm i`
-2. Build the bundled js with `npm run build`
+2. Build the bundled js with `npm run dev`
 3. Run app.py using `python3 app.py`
-4. Upload your files and documents to encrypt and securely store them on your Firebase Storage.
-5. Download encrypted files as needed and decrypt them using your encryption key.
+4. Go to the hosted application `http://localhost:5173`
+5. Upload your files and documents to encrypt and securely store them on your Firebase Storage.
+6. Download encrypted files as needed and decrypt them using your encryption key.
 
 ## Team 
 - [Participants/Team Members](https://github.com/Sharjeel-Afridi/CryptoDrive/blob/main/PARTICIPANTS.md)
