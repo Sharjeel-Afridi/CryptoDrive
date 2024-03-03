@@ -37,11 +37,11 @@ const Home = () => {
     
     return (
         <>
-        <div className="flex justify-between items-center h-[100px] px-10">
+        <div className="flex justify-between items-end h-[112px] px-[50px] mb-10">
             <h1 className="font-bold text-2xl">
                 HOME
             </h1>
-            <button onClick={handleRefresh}>Refresh</button>
+            <button className="font-light hover:border-b" onClick={handleRefresh}>Refresh</button>
         </div>
         <div className="flex gap-[50px] flex-wrap ml-[20px]">
             {data.name.map((item,index) => (
