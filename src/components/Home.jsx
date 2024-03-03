@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import Password from "./Password";
 import FileImg from "../assets/icons8-file-100.png";
+
+
+
 const Home = () => {
   const [data, setData] = useState({ name: [] });
   const [showPassword, setShowPassword] = useState(false);
   const [filename, setFilename] = useState("");
+  const [passwordChecked, setPasswordChecked] = useState(false)
 
   useEffect(() => {
     fetchData();
@@ -22,14 +26,14 @@ const Home = () => {
     }
   };
 
-      const fileClick = (item) => {
-        setFilename(item)
-        setShowPassword(true)        
-      }
-      const handleRefresh = () => {
-        console.log('refresh')
-        fetchData()
-      }
+    const fileClick = (item) => {
+    setFilename(item)
+    setShowPassword(true)        
+    }
+    const handleRefresh = () => {
+    console.log('refresh')
+    fetchData()
+    }
     
     return (
         <>
@@ -47,7 +51,7 @@ const Home = () => {
                 </div>
             ))}
         </div>
-        {showPassword && <Password filename={filename}/>}
+        {(showPassword && !passwordChecked) && <Password filename={filename} setPasswordChecked={setPasswordChecked}/>}
         </>
     )
 };

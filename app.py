@@ -8,13 +8,15 @@ import os, os.path, requests
 app = Flask(__name__)
 CORS(app)
 
+blob_list = list(blobs)
+
 name_list = []
 
 encryptor = Encryptor()
 
 def update_name_list():
     name_list = []
-    for blob in blobs:
+    for blob in blob_list:
         name_list.append(blob.name)
     return name_list
 
