@@ -8,7 +8,7 @@
 - Features
 - Usage
 - Technologies Used
-- Contact
+- Team
 
 ## Introduction
 CryptoDrive is an innovative secure file-sharing platform that prioritizes the confidentiality and security of your data. By leveraging advanced encryption techniques and secure cloud storage, CryptoDrive ensures your files remain encrypted and protected from unauthorized access. With CryptoDrive, users can securely upload, store, and share sensitive documents, confident that their information is shielded from prying eyes.
@@ -46,3 +46,6 @@ CryptoDrive is built using the following technologies:
 - **Libraries Used**: Flask, flask-cors, cryptography.fernet, firebase-admin, os, etc.
 - **Encryption**: Base64 (cryptography.fernet)
 - **Storage**: Firebase Storage Bucket
+
+## Team 
+- [Participants/Team Members](https://github.com/Sharjeel-Afridi/CryptoDrive/blob/main/PARTICIPANTS.md)
