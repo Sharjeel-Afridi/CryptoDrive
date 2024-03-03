@@ -21,19 +21,19 @@ Against this backdrop, the necessity of CryptoDrive becomes evident as a solutio
 
 ## Use Cases
 ### Legal Compliance and Client Confidentiality:
-- In the legal sector, maintaining client confidentiality is paramount. CryptoDrive enables law firms and legal professionals to securely share confidential documents with clients while adhering to strict legal compliance requirements.
+- In the legal sector, maintaining client confidentiality is paramount. Using CryptoDrive, law firms, and legal professionals can securely share confidential documents with clients while adhering to strict legal compliance requirements.
 
 ### Healthcare Data Protection
-- Healthcare organizations rely on CryptoDrive to protect patient confidentiality and comply with regulations such as HIPAA. With CryptoDrive, healthcare providers can securely share medical records and sensitive healthcare information while safeguarding patient privacy.
+- Healthcare organizations can rely on CryptoDrive to protect patient confidentiality and comply with regulations such as HIPAA. With CryptoDrive, healthcare providers can securely share medical records and sensitive healthcare information while safeguarding patient privacy.
 
 ### Government and Military Communication:
-- Government agencies and military organizations utilize CryptoDrive to exchange classified information securely. CryptoDrive ensures that sensitive government documents and intelligence reports remain confidential and protected from adversaries.
+- Government agencies and military organizations can utilize CryptoDrive (base64 encryption) to exchange classified information securely. CryptoDrive will ensures that sensitive government documents and intelligence reports remain confidential and protected from adversaries.
 
 ### Intellectual Property Protection:
-- Innovators and creators in industries such as technology and entertainment leverage CryptoDrive to protect intellectual property rights. CryptoDrive offers a secure environment for sharing patent applications, design blueprints, and copyrighted materials while safeguarding valuable intellectual assets.
+- Innovators and creators in industries such as technology and entertainment can leverage CryptoDrive to protect intellectual property rights. CryptoDrive offers a secure environment for sharing patent applications, design blueprints, and copyrighted materials while safeguarding valuable intellectual assets.
 
 ## Features
-- **Free of Cost**: CryptoDrive is an open-source and free-of-cost data encryption model that is a funnel between the user and the end-point.
+- **Free of Cost**: CryptoDrive is an open-source and free-of-cost data encryption model that is a gateway between the user and the end-point.
 - **End-to-end Encryption**: CryptoDrive utilizes Base64 encryption to secure user data, ensuring that only authorized users with the decryption key can access the information.
 - **Firebase Integration**: CryptoDrive leverages Firebase's storage buckets to safely store the encrypted files uploaded by the user.
 - **File Upload and Download**: The application allows users to upload encrypted files to their Firebase storage buckets, and download them for decryption and access.
