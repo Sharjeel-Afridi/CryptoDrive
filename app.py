@@ -1,10 +1,15 @@
 from flask import Flask, render_template, jsonify, request
 from encryptor import Encryptor
 from firebase_storage import upload_file_to_storage, download_file_from_storage
+from firebase_init import blobs
 import os
 import requests
 
 app = Flask(__name__)
+name_list = []
+
+for blob in blobs:
+    name_list.append(blob.name)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -13,7 +18,7 @@ def upload_file():
 
     file = request.files['image']
 
-    upload_dir = '../static'
+    upload_dir = './static'
 
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
@@ -22,15 +27,27 @@ def upload_file():
     file.save(file_path)
     encryptor = Encryptor()
     keyVal = encryptor.key_create()
-    encryptor.key_write(keyVal, '../mykey.key')
-    loaded_key = encryptor.key_load('../mykey.key')
+    encryptor.key_write(keyVal, './mykey.txt')
+    loaded_key = encryptor.key_load('./mykey.txt')
 
-    encryptor.file_encrypt(loaded_key, file_path, f'./{file.filename}.txt')
-    upload_file_to_storage(f'./{file.filename}.txt', f'cryptodrive/encrypted/')
+    fileName = file.filename.split('.')[0]
 
-    encryptor.file_decrypt(loaded_key, f'./{file.filename}.txt', f'{file.filename}_dec.jpg')
-    return jsonify({'message': 'File uploaded successfully'})
+    encryptor.file_encrypt(loaded_key, file_path, f'{fileName}.txt')
+    upload_file_to_storage(f'./{fileName}.txt', f'{fileName}.txt')
 
+    # encryptor.file_decrypt(loaded_key, f'{trimmedFileName}.txt', f'{file.filename}_dec.jpg')
+
+    
+
+
+@app.route('/api/data', methods=['GET', 'POST'])
+def get_data():
+    
+    data = {}
+    data.update({"name": name_list})
+    print(data)
+    return data
+    # download_file_from_storage(f'cryptodrive/encrypted/{}.txt', )
 
 if __name__ == '__main__':
     app.run(debug=True)
