@@ -57,7 +57,7 @@ const App = () => {
         </div>
         
       </div>
-      {(inputClick && !formSubmitted) && <Input setFormSubmitted={setFormSubmitted}/>}
+      {(inputClick && !formSubmitted) && <Input setFormSubmitted={setFormSubmitted} setInputClick={setInputClick}/>}
       {(formSubmitted && !keyCopied) && <Apikey setKeyCopied={setKeyCopied} />}
       </>
     );

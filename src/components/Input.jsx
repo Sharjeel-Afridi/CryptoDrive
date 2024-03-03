@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InputField = ({ setFormSubmitted }) => {
+const InputField = ({ setFormSubmitted, inputClick, setInputClick }) => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -35,7 +35,7 @@ const InputField = ({ setFormSubmitted }) => {
   };
 
   return (
-    <div className="absolute top-0 h-[100%] w-[100%] z-10 backdrop-blur-[8px]">
+    <div className="absolute top-0 h-[100%] w-[100%] z-10 backdrop-blur-[8px]" onClick={setInputClick(!inputClick)}>
       <form
         method="POST"
         onSubmit={handleFormSubmit}

@@ -38,8 +38,8 @@ const Password = ({filename, setPasswordChecked}) => {
 
     return(
         <div className="absolute top-0 h-[100%] w-[100%] z-10 flex justify-center items-center backdrop-blur-[5px]">
-            <form className="flex flex-col justify-center items-center gap-[10px] px-10 h-[30vh] bg-slate-400 rounded-md " onSubmit={handleFormSubmit}>
-                <h1 className="font-bold text-2xl text-black">Secret Key</h1>
+            <form className="flex flex-col justify-center items-center gap-[10px] px-10 h-[30vh] bg-gray-800 rounded-md " onSubmit={handleFormSubmit}>
+                <h1 className="font-bold text-2xl ">Secret Key</h1>
                 <div className="flex gap-[10px]">
                     <input 
                         className=" flex items-center font-medium bg-white text-black rounded-sm h-[15vh] w-[35vw] px-4" 

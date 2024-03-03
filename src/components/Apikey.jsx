@@ -29,7 +29,7 @@ const Apikey = ({ setKeyCopied }) => {
 
   return (
     <div className="absolute top-0 h-[100%] w-[100%] z-10 flex justify-center items-center backdrop-blur-[5px]">
-      <div className="flex justify-center items-center gap-[10px] px-10 h-[25vh] bg-slate-400 rounded-md ">
+      <div className="flex justify-center items-center gap-[10px] px-10 h-[25vh] bg-gray-800 rounded-md ">
         <h1 className="flex items-center font-medium bg-white text-black rounded-sm h-[15vh] px-4">
           {keyContent}
         </h1>
