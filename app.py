@@ -12,8 +12,12 @@ name_list = []
 
 encryptor = Encryptor()
 
-for blob in blobs:
-    name_list.append(blob.name)
+def update_name_list():
+    name_list = []
+    for blob in blobs:
+        name_list.append(blob.name)
+    return name_list
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -38,15 +42,10 @@ def upload_file():
         
     return jsonify({'Result': 'File Uploaded Successfully'})
 
-# @app.route('/refresh', methods=['GET'])
-# def refresh():
-#     for blob in blobs:
-#         name_list.append(blob.name)
-
 
 @app.route('/api/data', methods=['GET', 'POST'])
 def get_data():
-    
+    name_list = update_name_list()
     data = {}
     data.update({"name": name_list})
     return data
