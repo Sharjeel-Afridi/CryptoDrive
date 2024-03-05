@@ -41,15 +41,15 @@ class Encryptor():
             file.write(decrypted)
  
 
-if __name__ == '__main__':     
-    encryptor = Encryptor()
+# if __name__ == '__main__':     
+#     encryptor = Encryptor()
 
-    keyVal = encryptor.key_create()
+#     keyVal = encryptor.key_create()
     
-    encryptor.key_write(keyVal, 'mykey.txt')
+#     encryptor.key_write(keyVal, 'mykey.txt')
 
-    loaded_key = encryptor.key_load('mykey.txt')
+#     loaded_key = encryptor.key_load('mykey.txt')
 
-    encryptor.file_encrypt(loaded_key, '/Users/avyuktsoni/Downloads/windmill.jpg', 'enc_image.txt')
+#     encryptor.file_encrypt(loaded_key, '/Users/avyuktsoni/Downloads/windmill.jpg', 'enc_image.txt')
 
-    encryptor.file_decrypt(loaded_key, 'enc_image.txt', 'dec_image.jpg')
+#     encryptor.file_decrypt(loaded_key, 'enc_image.txt', 'dec_image.jpg')
