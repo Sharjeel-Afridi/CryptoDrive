@@ -18,11 +18,11 @@ const InputField = ({ setFormSubmitted, inputClick, setInputClick }) => {
     const formData = new FormData();
     formData.append("image", selectedFile);
 
-        try {
-            const response = await fetch('http://localhost:8080/upload', {
-                method: 'POST',
-                body: formData
-            });
+    try {
+      const response = await fetch("http://localhost:8080/upload", {
+        method: "POST",
+        body: formData,
+      });
 
       if (!response.ok) {
         throw new Error("Failed to upload image");
@@ -35,7 +35,10 @@ const InputField = ({ setFormSubmitted, inputClick, setInputClick }) => {
   };
 
   return (
-    <div className="absolute top-0 h-[100%] w-[100%] z-10 backdrop-blur-[8px]" onClick={setInputClick(!inputClick)}>
+    <div
+      className="absolute top-0 h-[100%] w-[100%] z-10 backdrop-blur-[8px]"
+      onClick={setInputClick(!inputClick)}
+    >
       <form
         method="POST"
         onSubmit={handleFormSubmit}

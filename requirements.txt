@@ -57,9 +57,10 @@ frontend==0.0.3
 functions-framework==3.5.0
 gast==0.5.4
 gcloud==0.17.0
+google==3.0.0
 google-ai-generativelanguage==0.4.0
 google-api-core==2.16.1
-google-api-python-client==2.116.0
+google-api-python-client==2.121.0
 google-auth==2.27.0
 google-auth-httplib2==0.2.0
 google-auth-oauthlib==1.2.0
