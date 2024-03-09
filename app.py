@@ -57,8 +57,6 @@ def upload_file():
     # upload_file_to_storage(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
     upload_file_to_drive(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
 
-    
-        
     return jsonify({'Result': 'File Uploaded Successfully'})
 
 
