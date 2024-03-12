@@ -13,7 +13,7 @@ from driveapi import auth
 from uploadFile import upload_file_to_drive
 from downloadFile import download_file_from_drive
 from fileSearch import search_files_by_name
-from allFileList import list_all_items
+from allFileList import list_files
 
 app = Flask(__name__)
 CORS(app)
@@ -33,7 +33,7 @@ def update_name_list():
     # name_list = []
     # for blob in blobs:
     #     name_list.append(blob.name)
-    return list_all_items()
+    return list_files()
     # return name_list
 
 
