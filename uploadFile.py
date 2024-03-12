@@ -6,10 +6,8 @@ from googleapiclient.http import MediaIoBaseUpload
 
 def upload_file_to_drive(file_path, file_name):
   
-  creds = auth()
-  
   try:
-    service = build("drive", "v3", credentials=creds)
+    service = auth()
     
     file_metadata = {
         'name': file_name

@@ -3,7 +3,8 @@ from driveapi import auth
 from googleapiclient.http import MediaIoBaseDownload
 
 def download_file_from_drive(file_id, file_path):
-    service = build('drive', 'v3', credentials=auth())
+    # service = build('drive', 'v3', credentials=auth())
+    service = auth()
     
     request = service.files().get_media(fileId=file_id)
     

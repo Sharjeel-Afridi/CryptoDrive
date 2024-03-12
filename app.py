@@ -3,10 +3,10 @@ from flask_cors import CORS
 
 from pyenc.encryptor import Encryptor
 
-# from firebase_storage import upload_file_to_storage, download_file_from_storage
+from firebase_storage import upload_file_to_storage, download_file_from_storage
 
-# from firebase_init import blobs
-# from firebase_admin import storage
+from firebase_init import blobs
+from firebase_admin import storage
 import os, os.path, requests
 
 from driveapi import auth
@@ -18,6 +18,7 @@ from allFileList import list_all_items
 app = Flask(__name__)
 CORS(app)
 # drive_auth = auth()
+auth()
 
 name_list = []
 
@@ -25,14 +26,15 @@ encryptor = Encryptor()
 
 def update_name_list():
     
-    # storage_client = storage.bucket('cryptodrive-team96.appspot.com')
+    storage_client = storage.bucket('cryptodrive-team96.appspot.com')
 
-    # blobs = storage_client.list_blobs()
-    # # blob_list = list(blobs)
-    # name_list = []
-    # for blob in blobs:
-    #     name_list.append(blob.name)
-    return list_all_items()
+    blobs = storage_client.list_blobs()
+    # blob_list = list(blobs)
+    name_list = []
+    for blob in blobs:
+        name_list.append(blob.name)
+    # return list_all_items()
+    return name_list
 
 
 @app.route('/upload', methods=['POST'])
@@ -54,7 +56,7 @@ def upload_file():
     loaded_key = encryptor.key_load('./mykey.txt')
 
     encryptor.file_encrypt(loaded_key, file_path, f'./static/encryptedLocal/{file.filename}.enc')
-    # upload_file_to_storage(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
+    upload_file_to_storage(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
     upload_file_to_drive(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
 
     return jsonify({'Result': 'File Uploaded Successfully'})
@@ -84,7 +86,7 @@ def send_data():
     print(key_chk)
     if len(key_chk) == 44:
         try:
-            encryptor.file_decrypt(key_chk, f'./static/encryptedDrive/enc_{fileName}', f'./static/decrypted2/dec_{fileName}')
+            encryptor.file_decrypt(key_chk, f'./static/encryptedDrive/enc_{fileName}', f'./static/decrypted/dec_{fileName}')
             if os.path.exists(f'./static/decrypted/dec_{fileName}') == True:
                 print('Correct Key!')
         except:

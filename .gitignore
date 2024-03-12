@@ -28,3 +28,6 @@ enc_image.txt
 dec_image.jpg
 mykey.key
 .venv
+client_key.json
+token.json
+client_secret.json
