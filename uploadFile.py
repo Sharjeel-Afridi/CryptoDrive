@@ -1,6 +1,7 @@
-from driveAPI.driveapi import auth
+from driveapi import auth
 import io
 from googleapiclient.http import MediaIoBaseUpload
+
 
 def upload_file_to_drive(file_path, file_name):
     service = auth()

@@ -1,6 +1,4 @@
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
-from driveAPI.driveapi import auth
+from driveapi import auth
 
 def list_files():
     

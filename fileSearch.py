@@ -1,5 +1,4 @@
-from googleapiclient.discovery import build
-from driveAPI.driveapi import auth
+from driveapi import auth
 
 def search_files_by_name(file_name):
     

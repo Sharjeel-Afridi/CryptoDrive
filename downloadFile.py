@@ -1,4 +1,4 @@
-from driveAPI.driveapi import auth
+from driveapi import auth
 from googleapiclient.http import MediaIoBaseDownload
 
 def download_file_from_drive(file_id, file_path):
