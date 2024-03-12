@@ -5,15 +5,15 @@ from pyenc.encryptor import Encryptor
 
 # from firebase_storage import upload_file_to_storage, download_file_from_storage
 
-from firebase_init import blobs
+# from firebase_init import blobs
 from firebase_admin import storage
 import os, os.path, requests
 
-from driveapi import auth
-from uploadFile import upload_file_to_drive
-from downloadFile import download_file_from_drive
-from fileSearch import search_files_by_name
-from allFileList import list_files
+from driveAPI.driveapi import auth
+from driveAPI.uploadFile import upload_file_to_drive
+from driveAPI.downloadFile import download_file_from_drive
+from driveAPI.fileSearch import search_files_by_name
+from driveAPI.allFileList import list_files
 
 app = Flask(__name__)
 CORS(app)
