@@ -26,15 +26,15 @@ encryptor = Encryptor()
 
 def update_name_list():
     
-    storage_client = storage.bucket('cryptodrive-team96.appspot.com')
+    # storage_client = storage.bucket('cryptodrive-team96.appspot.com')
 
-    blobs = storage_client.list_blobs()
-    # blob_list = list(blobs)
-    name_list = []
-    for blob in blobs:
-        name_list.append(blob.name)
-    # return list_all_items()
-    return name_list
+    # blobs = storage_client.list_blobs()
+    # # blob_list = list(blobs)
+    # name_list = []
+    # for blob in blobs:
+    #     name_list.append(blob.name)
+    return list_all_items()
+    # return name_list
 
 
 @app.route('/upload', methods=['POST'])
