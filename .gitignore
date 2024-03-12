@@ -31,3 +31,6 @@ mykey.key
 client_key.json
 token.json
 client_secret.json
+__pycache__
+firebaseAdmin/__pycache__
+pyenc/__pycache__
