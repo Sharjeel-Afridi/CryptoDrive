@@ -3,7 +3,7 @@ from flask_cors import CORS
 
 from pyenc.encryptor import Encryptor
 
-from firebase_storage import upload_file_to_storage, download_file_from_storage
+# from firebase_storage import upload_file_to_storage, download_file_from_storage
 
 from firebase_init import blobs
 from firebase_admin import storage
@@ -56,7 +56,7 @@ def upload_file():
     loaded_key = encryptor.key_load('./mykey.txt')
 
     encryptor.file_encrypt(loaded_key, file_path, f'./static/encryptedLocal/{file.filename}.enc')
-    upload_file_to_storage(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
+    # upload_file_to_storage(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
     upload_file_to_drive(f'./static/encryptedLocal/{file.filename}.enc', f'{file.filename}.enc')
 
     return jsonify({'Result': 'File Uploaded Successfully'})
