@@ -1,4 +1,6 @@
 import { useState } from "react";
+import close from "../assets/close.png";
+
 
 const InputField = ({ setFormSubmitted, inputClick, setInputClick }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -36,7 +38,7 @@ const InputField = ({ setFormSubmitted, inputClick, setInputClick }) => {
 
   return (
     <div
-      className="absolute top-0 h-[100%] w-[100%] z-10 backdrop-blur-[8px]"
+      className="fixed top-0 h-[100%] w-[100%] z-10 backdrop-blur-[5px]"
       onClick={setInputClick(!inputClick)}
     >
       <form
@@ -60,6 +62,7 @@ const InputField = ({ setFormSubmitted, inputClick, setInputClick }) => {
           value="Submit"
         />
       </form>
+      <img src={close} className="absolute top-[30%] left-[81vw] cursor-pointer" onClick={() => setInputClick(false)}/>
     </div>
   );
 };

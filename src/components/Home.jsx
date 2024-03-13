@@ -25,8 +25,10 @@ const Home = () => {
   };
 
   const fileClick = (item) => {
+    console.log("click")
     setFilename(item);
     setShowPassword(true);
+    setPasswordChecked(false)
   };
   const handleRefresh = () => {
     console.log("refresh");

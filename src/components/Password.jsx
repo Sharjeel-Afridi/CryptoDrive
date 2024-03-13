@@ -1,4 +1,6 @@
 import { useState } from "react";
+import close from "../assets/close.png";
+
 
 const Password = ({ filename, setPasswordChecked }) => {
   const [inputValue, setInputValue] = useState("");
@@ -33,7 +35,7 @@ const Password = ({ filename, setPasswordChecked }) => {
   };
 
   return (
-    <div className="absolute top-0 h-[100%] w-[100%] z-10 flex justify-center items-center backdrop-blur-[5px]">
+    <div className="fixed top-0 h-[100%] w-[75%] z-10 flex justify-center items-center backdrop-blur-[5px]">
       <form
         className="flex flex-col justify-center items-center gap-[10px] px-10 h-[30vh] bg-gray-800 rounded-md "
         onSubmit={handleFormSubmit}
@@ -53,6 +55,7 @@ const Password = ({ filename, setPasswordChecked }) => {
             Submit
           </button>
         </div>
+        <img src={close} className="absolute top-[35.5%] left-[58vw] h-[35px] cursor-pointer" onClick={() => setPasswordChecked(true)}/>
       </form>
     </div>
   );

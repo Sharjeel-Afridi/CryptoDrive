@@ -31,7 +31,7 @@ const App = () => {
     return (
         <>
       <div className="flex">
-        <nav className="flex flex-col gap-[20px] w-[25%] h-[100vh] border-r-[2px] ">
+        <nav className="fixed flex flex-col gap-[20px] w-[25%] h-[100vh] border-r-[2px] ">
             <h1 className="flex justify-center items-center h-[20vh] font-bold text-3xl">CryptoDrive</h1>
             <div className="flex flex-col justify-center h-[70vh] font-bold  gap-[40px] ">
                 <button className={`nav-btn mx-6 p-2 ${buttonText === 'HOME' ? 'text-black border-white rounded-full bg-blue-100' : ''}`} onClick={handleNavClick}>
@@ -45,13 +45,13 @@ const App = () => {
                 </button>
             </div>
         </nav>
-        <div className="relative h-[100vh] w-[75%] " id="content">
+        <div className="h-[100vh] w-[75%] ml-[25%]" id="content">
             {componentMap[buttonText]}
             {/* {inputClick && <Input />} */}
             <img 
                 src={Plus} 
                 id="upload" 
-                className="absolute h-20 bottom-20 right-20 rounded-full cursor-pointer" 
+                className="fixed h-20 bottom-20 right-20 rounded-full cursor-pointer" 
                 onClick={handleUpload}
             />
         </div>
