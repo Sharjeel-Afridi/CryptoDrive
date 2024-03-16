@@ -9,7 +9,7 @@ from pyenc.encryptor import Encryptor
 # from firebase_admin import storage
 import os, os.path
 
-# from driveapi import auth
+from driveapi import auth
 from uploadFile import upload_file_to_drive
 from downloadFile import download_file_from_drive
 from fileSearch import search_files_by_name
@@ -17,23 +17,20 @@ from allFileList import list_files
 
 app = Flask(__name__)
 CORS(app)
-# auth()
 
 name_list = []
 
 encryptor = Encryptor()
 
 def update_name_list():
-    
-    # storage_client = storage.bucket('cryptodrive-team96.appspot.com')
-
-    # blobs = storage_client.list_blobs()
-    # # blob_list = list(blobs)
-    # name_list = []
-    # for blob in blobs:
-    #     name_list.append(blob.name)
+   
     return list_files()
-    # return name_list
+   
+
+@app.route('/login', methods=['GET'])
+def login():
+    auth()
+    return "login";
 
 
 @app.route('/upload', methods=['POST'])

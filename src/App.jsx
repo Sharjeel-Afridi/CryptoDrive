@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Plus from "./assets/icons8-plus-100.png"
 import Home from "./components/Home";
 import MyDrive from "./components/MyDrive";
