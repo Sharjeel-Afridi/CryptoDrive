@@ -30,7 +30,7 @@ def update_name_list():
 @app.route('/login', methods=['GET'])
 def login():
     auth()
-    return "login";
+    return "login"
 
 
 @app.route('/upload', methods=['POST'])
