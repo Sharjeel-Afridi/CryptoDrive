@@ -6,6 +6,7 @@ def list_files():
     name_list = []
     
     response = service.files().list(
+        q="name contains '.enc'",
         pageSize=100,
         fields="files(id, name)"
     ).execute()

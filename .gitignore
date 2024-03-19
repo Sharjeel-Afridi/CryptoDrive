@@ -35,3 +35,7 @@ client_secret.json
 __pycache__
 firebaseAdmin/__pycache__
 pyenc/__pycache__
+static/uploaded/*
+static/encryptedLocal/*
+static/encryptedDrive/*
+static/decrypted/*
