@@ -39,7 +39,6 @@ class Encryptor():
 
         with open(decrypted_file, 'wb') as file:
             file.write(decrypted)
- 
 
 # if __name__ == '__main__':     
 #     encryptor = Encryptor()
